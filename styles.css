@@ -1,0 +1,160 @@
+/* Définition des variables de couleur pour la cohérence */
+:root {
+    --cta-green: #1eb8a8;
+    --why-us-green: #43d6c7;
+    --highlight-yellow: hsl(71, 73%, 54%);
+    --button-green: #c4f13b;
+    --button-hover-green: #b3df2f;
+    --background-neutral: #eaf3f7;
+    --card-background-white: #fff;
+    --header-text-dark-grey: #333;
+    --header-paragraph-grey: #666;
+    --text-white: #fff;
+}
+
+/* Styles généraux et Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-neutral);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Centrage vertical de la carte */
+}
+
+/* Mise en page de la carte */
+.price-grid-card {
+    background-color: var(--card-background-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 650px; /* Largeur maximale pour le desktop */
+    width: 100%;
+    overflow: hidden; /* Pour gérer les bords arrondis */
+    display: grid;
+    /* La première section prend toute la largeur */
+    grid-template-rows: auto auto; 
+    /* Les deux sections du bas sont mises en page dans le conteneur 'bottom-sections' */
+}
+
+/* --- Section Supérieure (Join Community) --- */
+.join-community {
+    padding: 30px;
+}
+
+.header-h2 {
+    color: var(--cta-green);
+    margin-top: 0;
+    font-size: 1.5rem; /* Ajustement pour H2 */
+}
+
+.highlight {
+    color: var(--highlight-yellow);
+    font-weight: bold;
+    font-size: 16px;
+    margin: 15px 0 10px 0;
+}
+
+.header-paragraph {
+    color: var(--header-paragraph-grey);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* --- Sections Inférieures (Plan Details & Why Us) --- */
+
+.bottom-sections {
+    display: flex; /* Utilisation de Flexbox pour aligner côte à côte */
+}
+
+/* Styles communs aux sections inférieures */
+.plan-details, .why-us {
+    padding: 30px;
+    flex: 1; /* Permet aux deux sections de prendre un espace égal */
+}
+
+.plan-h3 {
+    color: var(--text-white);
+    margin-top: 0;
+    font-size: 1.25rem; /* Ajustement pour H3 */
+}
+
+/* Plan Details Section */
+.plan-details {
+    background-color: var(--cta-green);
+    color: var(--text-white);
+}
+
+.price-group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.per-month {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.access-info {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Bouton CTA */
+.cta-button {
+    background-color: var(--button-green);
+    color: var(--header-text-dark-grey);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--button-hover-green);
+}
+
+/* Why Us Section */
+.why-us {
+    background-color: var(--why-us-green);
+    color: var(--text-white);
+}
+
+.why-us ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.8; /* Pour un aspect plus léger */
+}
+
+/* --- Responsivité (Mobile: max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* La carte s'adapte à la largeur du viewport */
+    .price-grid-card {
+        margin: 20px 0;
+    }
+
+    /* Les sections inférieures s'empilent verticalement */
+    .bottom-sections {
+        flex-direction: column;
+    }
+
+    /* Padding des sections sur mobile */
+    .join-community, .plan-details, .why-us {
+        padding: 25px;
+    }
+}
